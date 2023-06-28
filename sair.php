@@ -1,7 +1,6 @@
 <?php 
+    session_start(); // Inicia a sessão para poder acessar as variáveis de sessão
 
-    session_start();
+    require_once 'classes/Autenticacao.php'; // Inclui a classe de autenticação
 
-    require_once 'classes/Autenticacao.php';
-
-    Autenticacao::deslogar();
+    Autenticacao::deslogar(); // Chama o método de deslogar da classe de autenticação

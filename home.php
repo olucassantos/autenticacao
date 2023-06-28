@@ -1,12 +1,12 @@
 <?php
-    session_start();
+    session_start(); // Inicia a sessão para poder acessar as variáveis de sessão
 
-    require_once 'classes/Autenticacao.php';
+    require_once 'classes/Autenticacao.php'; // Inclui a classe de autenticação
 
-    Autenticacao::verificarAutenticacao();
+    Autenticacao::verificarAutenticacao(); // Chama o método de verificar autenticação da classe de autenticação
 
-    $usuario = Autenticacao::getUsuario();
-    $usuarios = (new Banco)->buscarUsuarios();
+    $usuario = Autenticacao::getUsuario(); // Pega o usuário da sessão
+    $usuarios = (new Banco)->buscarUsuarios(); // Busca todos os usuários do banco de dados
 ?>
 
 <!DOCTYPE html>

@@ -13,6 +13,8 @@
                 <h3>Cadastro de usuário</h3>
 
                 <form action="armazenar.php" method="POST">
+                    <!-- Mostra mensagens de acordo com o cadastro do usuario -->
+                    
                     <?php if(isset($_GET['erro'])): ?>
 
                         <?php if($_GET['erro'] == '1'): ?>

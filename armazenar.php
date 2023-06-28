@@ -1,6 +1,7 @@
 <?php
-    require_once("classes\Banco.php");
+    require_once("classes\Banco.php"); // Inclui a classe do banco de dados
 
+    // Cria uma instância do banco de dados
     $banco = new Banco();
 
     // Valida os dados do usuário
@@ -22,14 +23,18 @@
         exit;
     }
 
+    // Cria um array com os dados do usuário para inserir no banco
     $usuario = [
         "nome" => $_POST["nome"],
         "usuario" => $_POST["usuario"],
         "senha" => $_POST["senha"]
     ];
 
+    // Insere o usuário no banco
     $usuarioId = $banco->inserirUsuario($usuario);
 
+    // Redireciona para a página index.php com o parâmetro sucesso=1
+    // Caso contrário, redireciona para a página cadastro.php com o parâmetro erro=4
     if($usuarioId){
         header("Location: index.php?sucesso=1");
     }else{
